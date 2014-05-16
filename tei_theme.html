@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<!--
+ 
+      Theme: The Energy Issue
+      Author: Th-ey + Project Projects  [http://jxnblk.com]
+      For: The Energy Ussye  [http://tumblr.com/]
+      Terms: Designed for The energy issue.
+  
+-->
+<html>
+<head>
+    <link rel="stylesheet" href="http://dev.projectprojects.com/theenergyissue/final/ss-social/webfonts/ss-social.css">
+    <script src="http://dev.projectprojects.com/theenergyissue/final/modernizr.custom.59295.js"></script>
+    <style>
+/* ————————————————————————————————————————————— */
+/* !Meta */
+/* ————————————————————————————————————————————— */  
+* {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}                   
+*:before {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;} 
+*:after {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -webkit-font-smoothing: antialiased;} 
+a {vertical-align: baseline;}
+ul, li {display: inline-block; list-style: none; margin: 0; padding: 0;}
+strong {font-weight: bold;}
+em {font-style: italic;}
+p {margin: 0 0 1em 0;}
+a, a:hover, a:active, a:link {text-decoration: none; outline: none !important; color: inherit;}		
+a:hover {opacity: 0.75;}
+.visibility-hidden {visibility: visible !important; position: relative;}    
+.cf:before, .cf:after { content: " "; display: table; }
+.cf:after { clear: both; }
+.hidden {display: none; position: absolute; overflow: hidden;}
+/* ————————————————————————————————————————————— */
+/* !Logo */
+/* ————————————————————————————————————————————— */
+#Logo * {margin: 0; padding: 0;}
+#Logo {width: 67em; height: 67em; position: relative; font-size: 1%; float: left; z-index: 99; margin-right: 5em; /* here */} 
+#Type {position: relative; display: inline-block; width: 100%;}
+#IO {border: 3px solid black; z-index: 9; border-radius: 99em; height: 20em; width: 51%; position: absolute; top: 0;}
+#I {text-decoration: none; border-bottom: none; display: block; float: left; height: 20em; width: 20em; position: absolute; right: 0; z-index: 9999;}
+#O {text-decoration: none; border-bottom: none; display: block; float: left; height: 20em; width: 20em; position: absolute; left: 0; z-index: 9999;}
+#I span {visibility: hidden;}
+#O-Symbol {height: 5em; width: 5em; border: 3px solid black; border-radius: 99em; margin: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
+#I-Symbol {height: 5em; width: 0em; border: 2px solid black; margin: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
+#Toggle-Marker {border: 3px solid black; border-radius: 99em; height: 20em; width: 20em; position: absolute; top: 0; right: 0; z-index: -1;}
+#Toggle {margin: -3px; min-width: 20em; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; text-decoration: none; border-bottom: none;}
+#I.target #I-Symbol { border: 2px solid white;}                
+#I.target ~ #Toggle {min-width: 101%;}
+#I.target ~ #Toggle #Toggle-Marker {background-color: black;}
+/* ————————————————————————————————————————————— */
+/* !Composition */
+/* ————————————————————————————————————————————— */   
+#Menu-Button {display: inline-block; position: relative; top: -0.5em; float: left; clear: left;}
+#Paper {text-align: center; margin-top: 2.5em;}
+#Introduction {max-width: 1300px; margin: 0; padding: 0; display: inline-block; margin: 3em 5vw;}
+#Footer {max-width: 1300px; margin: 0; padding: 0; display: inline-block; margin: 3em 5vw;}
+#Introduction-Text {font-size: 2.25em; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left; word-spacing: -0.15em; letter-spacing: -0.02em;}
+#Copyright {font: normal 11px/1.1em Arial, Helvetica, sans-serif;}
+#Social {float: right; font-size: 2em;}
+#Tags {font-size: 1em; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left; -webkit-column-count:3; -moz-column-count:3; column-count:3; padding-top: 3em; float: left; clear: left; width: 100%;}
+#Footer-Content {margin: auto; width: 1203px;}
+#Load-More { display: block; width: 75%; margin: auto; padding: 1em;}
+/* ————————————————————————————————————————————— */
+/* !Typography */
+/* ————————————————————————————————————————————— */ 
+h1 {font: inherit; margin-bottom: 1em;}		
+h2 {font: inherit; margin-bottom: 1em; text-transform: uppercase;}		
+blockquote {margin: 0; padding: 0; display: inline-block; line-height: 1em;}
+/* ————————————————————————————————————————————— */
+/* !Global Modules */
+/* ————————————————————————————————————————————— */ 
+header {width: 100%; display: block; position: relative; z-index: 99; text-align: left; margin-bottom: 2em; float: left; clear: both;}
+footer {text-align: center; margin: 6em 0;}
+nav {background: none; outline: none; border: 1px solid silver;font: normal 16px/1.1em Arial, Helvetica, sans-serif; border-radius: 0.5em; cursor: pointer; margin: 0; overflow: hidden; white-space: nowrap;}
+nav a { padding: 0.75em; border-left: 1px solid silver; display: block; float: left;}
+nav a:hover {background-color: black; color: white;}
+nav a:first-child {border-left: none;}
+.button, button{background: none; outline: none; border: 1px solid silver;font: normal 16px/1.1em Arial, Helvetica, sans-serif; border-radius: 0.5em; cursor: pointer; margin: 0; overflow: hidden;display: block;}
+.ss-icon {margin-right: 0.4em;}
+.post {display: block;}
+.link, .quote {text-align: left; margin: 0; display: block; width: 13em;}			 
+.link blockquote {display: inline; background-position: 0 bottom; background-repeat: repeat-x; background-image: url(underline.png)}
+.source {font-style: italic;}		
+.tag {display: inline-block;}
+
+article iframe {width: 21em; height: 12em; position: relative;}
+.counter li {display: inline-block; color: silver; margin: 0.05em; font-size: 0.75em;}
+.current {visibility: visible !important; color: black !important;}
+.photoset img {position: absolute; max-width: 100%; max-height: 100%; height: auto; width: auto; margin: auto; bottom: 0; left: 0; right: 0;}
+.slide {position: absolute; top: 0; left: 0; width: 100%; height: 100%; visibility: collapse;}
+.frame {position: relative;}
+.half-column {width: 50%; float: left;}
+.quarter-column {width: 25%; float: left;}
+.half-column, .quarter-column  {margin-bottom: 1em;}
+/* ————————————————————————————————————————————— */
+/* !Index Modules */
+/* ————————————————————————————————————————————— */ 
+#Index .left {left: -2em;}
+#Index .right {right: -2em;}
+#Index .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 2em; height: 100%; line-height: 15em; opacity: 0; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
+#Index article {font-size: 2.7vw; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; word-spacing: -0.15em; letter-spacing: -0.02em; margin: 2em; display: inline-block; position: relative; width: inherit;}
+#Index .caption {height: 100%; padding: 1em; background-color: rgba(255,255,255,0.9); text-align: left; overflow-y: scroll; top: 0; position: absolute; left: 0; right: 0;}
+#Index *:hover .arrow {opacity: 1;}
+#Index .caption-wrapper {height: 100%; width: 100%; position: absolute; z-index: 100; opacity: 0; display: block; overflow: hidden; top: 0;  background-color: rgba(255,255,255,0.9);}
+#Index .caption-wrapper iframe {width: 100% !important;}
+#Index .photoset {height: 12em; width: 14em; position: relative;}
+#Index .caption-wrapper:hover {opacity: 1;background-color: rgba(255,255,255,1);}
+#Index .readmore {position: absolute; top: 0; left: 0; bottom:0; right:0; font: normal 16px/1.1em Arial, Helvetica, sans-serif; border-radius: 0.5em; cursor: pointer; margin: auto; width: 15em; height: 3em; z-index: 99; background-color: rgba(255,255,255,1); letter-spacing: 0; text-transform: uppercase; word-spacing: 0; padding: 1em;}
+#Index .slideshow {position: absolute; top: 0; left: 0; height: 12em; width: 14em;}
+#Index .counter {position: absolute; bottom: -1.5em; left: 0; right: 0; margin: 0;}
+#Index .video .caption {visibility: collapse;}
+#Index .video .caption-wrapper {background-color: transparent !important; top: 0em; height: 4em;}
+#Index .video:hover .caption-wrapper {opacity: 1;}
+/* ————————————————————————————————————————————— */
+/* !Permalink Modules */
+/* ————————————————————————————————————————————— */ 
+#Permalink article {font-size: 3vw; width: 100%; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; word-spacing: -0.15em; letter-spacing: -0.02em; margin: 1em; display: inline-block; position: relative; width: inherit;}
+#Permalink .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 3em; height: 100%; line-height: 15em; opacity: 1; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
+#Permalink .caption {text-align: left; width: 24em; }
+#Permalink .photoset {height: auto; width: 24em; position: relative;}
+#Permalink .slideshow {height: 15em; width: 24em;position: relative; display: block;}
+#Permalink .caption-wrapper {position: relative; opacity: 1; display: block; margin-top: 2em;}
+#Permalink .readmore {display: none;}
+#Permalink .counter {position: absolute; top: 15; left: 0; right: 0; margin: 0;}
+#Permalink .text {width: 24em; text-align: left;}
+#Permalink .left {left: -3em;}
+#Permalink .right {right: -3em;}
+#Permalink .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 3em; height: 100%; line-height: 15em; opacity: 1; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
+
+/* ————————————————————————————————————————————— */
+/* !Footer */
+/* ————————————————————————————————————————————— */ 
+
+#Footer .title {display: none;}
+#Footer .body {font-size: 1em; max-width: 1300px; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left;}
+
+@media screen and (max-width: 1300px) {
+.half-column {width: 75%; float: left; clear: both;}
+.quarter-column {width: 25%; float: right; clear: right;}
+}
+
+@media screen and (max-width: 1000px) {
+	#Introduction-Text {width: 100%; float: none; clear: both; }
+	#Logo {margin-bottom: 5em;}	
+	#Social {float: left;}
+	article {margin-bottom: 1em;}
+	.half-column, .quarter-column {width: 100%; float: left; clear: both; text-align: left;}
+}
+
+@media screen and (max-width: 700px) {
+	#Logo {margin: auto; left: 0; right: 0; font-size: 7px !important; margin-bottom: 5em;}
+	#Copyright, #Social {display: none;}
+	#Introduction-Text {width: 100%; float: none; clear: both; margin: auto;}
+	#Tags {display: none;}
+	header {}
+	footer {display: none;}	
+	article {display: block; margin-bottom: 5em;}
+	.photoset {width: 100%; height: 400px;}
+	.slideshow {width: 100%; height: 100%;}
+	.single-image {width: 100%; height: auto;}
+	.quote, .link {width: 100%; font-size: 2em; line-height: 1.111em;}
+	.counter {font-size: 2em;}
+}    
+    </style>
+    <!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="http://dev.projectprojects.com/theenergyissue/final/ie.css" />
+<![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    			
+    		$(document).ready(function(){
+    		        $('.photoset').find('.slideshow li:first-child, .counter li:first-child').addClass('current');
+
+					$('#Paper').on('click', '.right, .left', function(){
+						var photoset = $(this).parent('.photoset');
+						var current = photoset.find('.current');
+
+					  /* ————————————————————————————————————————————————— */
+					  // ! Going right
+					  /* ———————————————————————————————————————————————— */
+
+						if( current.next().is('li') && $(this).hasClass('right') ) {
+							console.log('go forward' + current.next().is('li') );
+							nextIndex = current.index() + 1;
+						} else if($(this).hasClass('right')) {
+							console.log('back to start');						
+							nextIndex = 0;
+						}
+
+					  /* ————————————————————————————————————————————————— */
+					  // ! Going left
+					  /* ———————————————————————————————————————————————— */
+						
+						if( current.prev().is('li') && $(this).hasClass('left') ) {
+							console.log('go backwards' + current.next().is('li') );
+							nextIndex = current.index() - 1;
+						} else if($(this).hasClass('left')) {
+							console.log('back to end');												
+							nextIndex = current.siblings('li:last').index();
+						}		
+	    			photoset.find('.current').removeClass('current');
+						photoset.find('.slideshow').find('li').eq(nextIndex).addClass('current');
+						photoset.find('.counter').find('li').eq(nextIndex).addClass('current');						
+	    		});
+    		});
+    </script>
+
+
+    <title></title>
+</head>
+
+<body>
+		<main id="Paper" class="cf">
+<div id="Introduction">
+    <header>
+    <div class="half-column">
+    {block:HasPages}
+        <nav id="Menu-Button">
+        {block:Pages}
+           <a href="{URL}" title="{Label}">{Label}</a>
+        {/block:Pages}
+        </nav>
+    {/block:HasPages}
+    </div>
+    <div class="quarter-column">
+        <p id="Copyright">&copy; 2014 &#8212; The Energy Issue. A Columbia University GSAPP initiative launched in partnership with <span>Oldcastle BuildingEnvelope&reg;.</span></p>   
+    </div>
+    <div class="quarter-column">    
+        <ul id="Social">
+            <li class='ss-icon'><a href="https://twitter.com/theenergyissue">twitter</a></li>
+            <li class='ss-icon'>googleplus</li>
+            <li class='ss-icon'>vimeo</li>
+        </ul>
+    </div>
+   </header>
+   <div {block:TagPage}class="hidden"{/block:TagPage}>
+{block:IndexPage}
+<div id="Logo"><div id="IO"><a id="O" href="javascript:(function(){var i = document.getElementById('I'); i.className = ''; var twerk = document.getElementById('EnergyTwerk'); twerk.outerHTML = '';})()"><hr id="O-Symbol"></a><a id="I" href="javascript:(function(){var twerk = document.getElementById('EnergyTwerk'); if(document.getElementById('EnergyTwerk')==null){ var i = document.getElementById('I'); if(document.getElementById('I')){i.className = 'target';} var newcss = 'p, h2, h1, h3, h4, h5, h6, img, .img, span, div, header, li { -webkit-transform-origin: 50% 50%; -moz-transform-origin: 50% 50%; transform-origin: 50% 50%; -webkit-animation:rotate 0.01s linear infinite alternate; -moz-animation:rotate 0.01s linear infinite alternate; -moz-animation:rotate 0.01s linear infinite alternate; } @-webkit-keyframes rotate { 0% {-webkit-transform: rotate(0deg);} 100% {-webkit-transform: rotate(-0.3deg);}} @-moz-keyframes rotate { from {-moz-transform: rotate(0deg);} to {-moz-transform: rotate(-0.3deg);} } @-keyframes rotate { 0% {-transform: rotate(0deg);} 100% {-transform: rotate(-0.3deg);}}'; if ('\v'=='v') /* ie only */{ document.createStyleSheet().cssText = newcss;} else { var tag = document.createElement('style'); tag.id = 'EnergyTwerk'; tag.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(tag); tag[ (typeof document.body.style.WebkitAppearance=='string') /* webkit only */ ? 'innerText' : 'innerHTML'] = newcss;};} else {var i = document.getElementById('I'); if(document.getElementById('I')){i.className = ''}; var twerk = document.getElementById('EnergyTwerk'); twerk.outerHTML = '';}})();"><span>I</span><hr id="I-Symbol"></a><a id="Toggle"><hr id="Toggle-Marker"></a></div>
+	<svg id="Type" version="1.2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 96 612 612"><polygon points="587.5,92.2 587.5,231.5 586.7,231.5 495.7,92.2 471.5,92.2 471.5,266.3 493.7,266.3 493.7,126.3 494.4,126.3 585,266.3 609.6,266.3 609.6,92.2 "/><polygon points="0.1,307.2 0.1,481.3 129.2,481.3 129.2,461.4 23.2,461.4 23.2,401.5 120.2,401.5 120.2,381.5 23.2,381.5 23.2,327.4 126.7,327.4 126.7,307.2 "/><path d="M226.1,385.9c27.3,0,40.7-9.2,40.7-30.2c0-18-10.6-29-35.1-29H170v59.2H226.1z M231.1,307.3c40.9,0,59.9,19,59.9,47.3 c0,23.6-14.3,40.7-40.9,44.6l6.8,2.7c14.1,5.6,19.8,20.2,23.8,32.9c5.3,16.8,11.3,35.1,21.6,46.7H275c-7.5-7.1-14.1-24.6-17-39.5 c-4.5-23.1-16.3-36.3-40.9-36.3h-47.1v75.8h-23.8V307.3H231.1z"/><path d="M388,323.1c-38.1,0-63.5,26.1-63.5,72.1c0,42.4,26.1,69.7,63.8,69.7c33.8,0,55.2-17.5,55.2-41.9v-11.7h-54.7v-20h76.7 			v32.6c-1,35.5-31.6,60.6-77.7,60.6c-45.1,0-87-30.9-87-89.1c0-60.2,38.4-91.6,87.3-91.6c49.4,0,69.5,27.5,75.2,54.5l-22.6,3 			C433.8,331.1,409.3,323.1,388,323.1"/><polygon points="585.5,307.3 533.1,389.8 481.5,307.3 453.7,307.3 520.9,409.1 520.9,481.3 544,481.3 544,409.1 612,307.3 "/><rect y="522.3" width="22.9" height="174.2"/><path d="M147.3,573.2c-1.4-23.4-17.6-35.8-42.2-35.8c-22.7,0-38.8,10.5-38.8,29.2c0,10.7,9,16.6,17.6,20 			c15.4,6.1,47.3,13.2,59.8,18c20.2,7.5,32.1,21.2,32.1,43.6c0,32.1-30.6,51.7-65.5,51.7c-43.2,0-71.6-21.9-72.3-59.9l21.5-1 c2.1,33.4,31.1,41.4,50.6,41.4c23.9,0,43.2-10.2,43.2-30.9c0-11.7-6-18.7-18.5-24.1c-12.8-5.6-43.2-11.9-60-18.5	 c-16.1-6.4-30.9-17.8-30.9-39.2c0-30.2,27.8-48.7,61.2-48.7c38.1,0,63.4,18.5,64.6,53.5L147.3,573.2z"/><path d="M296.3,573.2c-1.4-23.4-17.6-35.8-42.2-35.8c-22.7,0-38.8,10.5-38.8,29.2c0,10.7,9,16.6,17.6,20 		c15.4,6.1,47.3,13.2,59.8,18c20.2,7.5,32.1,21.2,32.1,43.6c0,32.1-30.6,51.7-65.5,51.7c-43.2,0-71.6-21.9-72.3-59.9l21.5-1 c2.1,33.4,31.1,41.4,50.6,41.4c23.9,0,43.2-10.2,43.2-30.9c0-11.7-6-18.7-18.5-24.1c-12.8-5.6-43.2-11.9-60-18.5 c-16.1-6.4-30.9-17.8-30.9-39.2c0-30.2,27.8-48.7,61.2-48.7c38.1,0,63.4,18.5,64.6,53.5L296.3,573.2z"/><path d="M332.9,628.3V522.3H355v105.9c0,31.9,10.7,51.7,44.3,51.7c32.9,0,44.1-19.7,44.1-51.7V522.3h22.2v105.9 c0,49.2-23.5,71.6-66,71.6C356.2,699.8,332.9,678.4,332.9,628.3"/><polygon points="487.6,522.3 609,522.3 609,542.6 510.6,542.6 510.6,596.6 602.4,596.6 602.4,616.5 510.6,616.5 510.6,676.4 611.4,676.4 611.4,696.4 487.6,696.4 "/><polygon points="332.8,92.2 332.8,266.3 458.2,266.3 458.2,246.4 355.9,246.4 355.9,186.4 449.2,186.4 449.2,166.4 355.9,166.4 355.9,112.4 455.8,112.4 455.8,92.2 "/></svg></div>
+		<div id="Introduction-Text">The Energy Issue works to make energy a cultural issue. Energy is as much a question of lifestyle, social values and communication as economics, policy and science, yet the former are often overlooked in discussions of power. The Energy
+Issue seeks to connect energy facts with energy values by reforming, discovering and advocating for energy as an issue in architecture, urbanism, film, literature, fashion, music, art, design and other forms of cultural production.
+		</div>
+<script type="text/javascript">document.getElementById('I').click();</script>  
+<script type="text/javascript">setTimeout(function() {document.getElementById('O').click();}, 5000);</script></div>{/block:IndexPage}
+
+<ul id="Tags" {block:PermalinkPage}class="hidden"{/block:PermalinkPage}></ul>		
+    </div>
+		
+	
+	<main {block:IndexPage}id="Index"{/block:IndexPage}  {block:PermalinkPage}id="Permalink"{/block:PermalinkPage}  class="cf ">	
+		
+	{block:Posts}		
+		
+    <article class="model" data-id="">
+        
+        <!-- ----------------------------------------------- -->
+        <!-- !TEXT BLOCK- ---------------------------------- -->
+        <!-- ----------------------------------------------- -->        
+        
+        {block:Regular}        
+        
+        <div class="text">
+        
+	        <!-- !TITLE - -------------------------------------- -->
+	
+	        <h2 class="title">{Title}</h2>
+	        
+	        <!-- !BODY CONTENT---------------------------------- -->
+	
+	        <div class="body">{Body}</div>
+	        
+		</div>	        
+        
+        {/block:Regular}   
+        
+        <!-- ----------------------------------------------- -->
+        <!-- !PHOTOSET ------------------------------------- -->
+        <!-- ----------------------------------------------- -->
+        
+        {block:Photoset}
+        
+        <div class="photoset">
+        				
+        <!-- !GALLERY- ------------------------------------- -->
+                    <!--[if (gte IE 9)|!(IE)]><!--> 
+                    <a class="arrow left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 100" width="0.5em" height="1em"><polyline fill="transparent" stroke="#000000" points="50,0 0,50 50,100 "/></svg></a>
+					<a class="arrow right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 100" width="0.5em" height="1em"><polyline fill="transparent" stroke="#000000" points="0,0 50,50 0,100 "/></svg></a>
+					<!--<![endif]-->
+					<ul class="slideshow">
+						{block:Photos}
+						    <li class="slide">
+							    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+							</li>
+						{/block:Photos}
+				    </ul>
+				    
+					<ul class="counter">
+					    {block:Photos}<li>&#8226;</li>{/block:Photos}
+					</ul>
+						
+                    {block:Caption}
+                    <div class="caption-wrapper">
+                    <a href="{Permalink}" class="readmore">Click to Read More</a>
+                    <div class="caption">{Caption}</div>
+                    </div>{/block:Caption}
+        </div>	
+        
+        {/block:Photoset}     
+        
+        <!-- ----------------------------------------------- -->
+        <!-- !PHOTO----------------------------------------- -->
+        <!-- ----------------------------------------------- -->
+        
+        {block:Photo}
+        
+        <div class="frame photo">
+        
+        	<!-- !IMAGE ---------------------------------------- -->
+        
+        	<!-- <img class="single-image" src="" alt=""> -->
+        	
+            {block:IndexPage}
+                <a href="{Permalink}">
+                    <img class="single-image" src="{PhotoURL-500}" />
+                </a>
+            {/block:IndexPage}
+            
+            {block:PermalinkPage}
+                <img class="single-image" src="{PhotoURL-HighRes}" />
+            {/block:PermalinkPage} 
+
+        	<!-- !CAPTION----------------------------------------- -->
+
+        	{block:Caption}<div class="caption-wrapper"><a href="{Permalink}" class="readmore">Click to Read More</a><div class="caption">{Caption}</div></div>{/block:Caption}
+        </div>	
+        
+        {/block:Photo}
+        
+        <!-- ----------------------------------------------- -->
+        <!-- !QUOTE BLOCK -->
+        <!-- ----------------------------------------------- -->
+				
+        {block:Quote}
+				
+        <div class="quote">
+            <blockquote class="words {Length}">
+                {Quote}
+            </blockquote>
+            <p class="source">{Source}</p>
+        </div>
+        
+        {/block:Quote}        
+        
+        <!-- ----------------------------------------------- -->
+        <!-- !LINK BLOCK -->
+        <!-- ----------------------------------------------- -->
+
+		{block:Link}
+
+        <div class="link">
+	        	
+	        	<!-- !CAPTION----------------------------------------- -->
+	        	
+                <div class="hyperlink"><a href="{URL}" {Target}>{Name}</a></div>
+                {block:Description}{Description}{/block:Description}
+
+
+        </div>
+        
+        {/block:Link}     
+        
+        <!-- ----------------------------------------------- -->
+        <!-- !VIDEO BLOCK -->
+        <!-- ----------------------------------------------- -->
+        
+        {block:Video}
+        
+        <div class="frame video">
+       	        
+	        <!-- PLAYER---------------------------------------- -->
+
+	        <div class="player">{VideoEmbed-400}</div>
+	        
+        	<!-- !CAPTION----------------------------------------- -->
+
+        	{block:Caption}<div class="caption-wrapper"><a href="{Permalink}" class="readmore">Click to Read More</a><div class="caption">{Caption}</div></div>{/block:Caption}
+        	
+        </div>	
+        
+        {/block:Video}   
+        
+        <!-- ----------------------------------------------- -->
+        <!-- AUDIO BLOCK -->
+        <!-- ----------------------------------------------- -->
+        
+        {block:Audio}
+        
+        <div class="audio">
+                
+	        <!-- PLAYER---------------------------------------- -->
+
+	        <div class="player"></div>
+	        
+        	<!-- !CAPTION----------------------------------------- -->
+
+        	<div class="caption"><a href=""></a></div>	        	        
+	        
+	      </div>  
+        
+        {/block:Audio}
+        
+        <!-- ----------------------------------------------- -->
+        <!-- !PANORAMA BLOCK-------------------------------- -->
+        <!-- ----------------------------------------------- -->
+
+	    {block:Panorama}
+
+        <div class="panorama"><img src="" alt=""></div>
+        
+        {/block:Panorama}
+        
+        <!-- ----------------------------------------------- -->
+        <!-- !CHAT BLOCK------------------------------------ -->
+        <!-- ----------------------------------------------- -->
+
+        {block:Chat}
+				
+        <div class="chat">
+            <ul class="conversation">
+                <li class="line "></li>
+            </ul>
+        </div>
+        
+        {/block:Chat}
+        
+        <!-- ----------------------------------------------- -->
+        <!-- !ANSWER BLOCK-------------------------- -->
+        <!-- ----------------------------------------------- -->
+
+        {block:Answer}
+				
+        <div class="answer"><img src=""></div>
+        
+        {/block:Answer}
+        
+        <!-- ----------------------------------------------- -->
+        <!-- !END BLOCKS---------------------------- -->
+        <!-- ----------------------------------------------- -->         
+        
+    </article>
+
+    {/block:Posts}     
+		
+    {block:NextPage}
+        <a id="Load-More" href="{NextPage}">Load More Posts</a>	
+    {/block:NextPage}
+        
+        <script type="text/javascript">
+    	$(document).ready(function(){
+        	$('#Paper').on('click', '#Big-More' , function(){
+        		var href = $(this).attr('href');
+        		$(this).remove();
+        		$.get(href, function(data){ 
+          			paper = $(data).filter("#Paper").html();
+          			console.log(paper);
+          			$("#Paper").append('' + paper);
+          		});
+      		    return false;
+    	    });
+    	});
+    	</script>        
+        
+	</main>	
+	
+    <footer id="Footer">
+        <script type="text/javascript">
+            $(document).ready(function(){ $('#Footer').load('/footer #Permalink > *');});		 		
+        </script>                    
+    </footer>
+    
+    <script type="text/javascript">
+		$(document).ready(function(){
+			/* ————————————————————————————————————————————————— */
+			// !Tag cloud loader
+			/* ———————————————————————————————————————————————— */
+			
+			tags = new Object();
+			getTags(tags, 0);
+		});
+		var getTags = function(tags, i){
+		$.ajax({ dataType: "jsonp", url: "http://api.tumblr.com/v2/blog/testenergyissue.tumblr.com/posts?api_key=1MtFaBcb26mHvz5cb9VMqoBzMkVMFYnsEE5ESNsI5EqL0F1OgQ&limit=50&offset="+i+"&jsonp=", success: function(json) {
+						
+						//Log the response
+						console.log(json.response);
+						
+						// !Loop through posts
+						$.each(json.response.posts, function(i, post) {
+							$.each(post.tags, function(i, tag) {
+							
+								// !Loop through tags				
+								slug = tag.replace(" ","-");
+								tags[tag] = slug.toLowerCase();
+							});
+			    	})
+			    	
+			    	// !Add the amount of posts returned to i (the posts processed)
+						i = json.response.posts.length + i;
+						
+						// !If the amaunt of posts returned is 50 call the function RECURSIVELY to get rest of the posts.
+						if(i == 50){
+							tags = getTags(tags, i);
+						
+							} else {
+							// !Othervise the query is done and we can list the tags in the dom
+							for(var tag in tags){
+								
+								$("#Tags").append("<li class='tag'><a href='http://testenergyissue.tumblr.com/tagged/" + tags[tag] +"'>#" + tag + "</a></li> ");
+							
+							};
+						}
+						
+						// !Return tags for recursion
+						return tags;
+					}
+				})
+		}
+		
+    </script>
+</body>
+</html>
