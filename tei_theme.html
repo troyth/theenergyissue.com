@@ -222,13 +222,11 @@ article iframe {width: 21em; height: 12em; position: relative;}
     {/block:HasPages}
     </div>
     <div class="quarter-column">
-        <p id="Copyright">&copy; 2014 &#8212; The Energy Issue. A Columbia University GSAPP initiative launched in partnership with <span>Oldcastle BuildingEnvelope&reg;.</span></p>   
+        <p id="Copyright">&copy; 2014 &#8212; The Energy Issue. A Columbia University GSAPP initiative launched in partnership with <span style="white-space;nowrap;">Oldcastle&nbsp;BuildingEnvelope&reg;.</span></p>   
     </div>
     <div class="quarter-column">    
         <ul id="Social">
-            <li class='ss-icon'><a href="https://twitter.com/theenergyissue">twitter</a></li>
-            <li class='ss-icon'>googleplus</li>
-            <li class='ss-icon'>vimeo</li>
+            <li class='ss-icon'><a href="https://twitter.com/theenergyissue" target="_blank">twitter</a></li>
         </ul>
     </div>
    </header>
@@ -240,7 +238,7 @@ article iframe {width: 21em; height: 12em; position: relative;}
 Issue seeks to connect energy facts with energy values by reforming, discovering and advocating for energy as an issue in architecture, urbanism, film, literature, fashion, music, art, design and other forms of cultural production.
 		</div>
 <script type="text/javascript">document.getElementById('I').click();</script>  
-<script type="text/javascript">setTimeout(function() {document.getElementById('O').click();}, 5000);</script></div>{/block:IndexPage}
+<script type="text/javascript">setTimeout(function() {document.getElementById('O').click();}, 3000);</script></div>{/block:IndexPage}
 
 <ul id="Tags" {block:PermalinkPage}class="hidden"{/block:PermalinkPage}></ul>		
     </div>
@@ -487,7 +485,7 @@ Issue seeks to connect energy facts with energy values by reforming, discovering
 			getTags(tags, 0);
 		});
 		var getTags = function(tags, i){
-		$.ajax({ dataType: "jsonp", url: "http://api.tumblr.com/v2/blog/testenergyissue.tumblr.com/posts?api_key=1MtFaBcb26mHvz5cb9VMqoBzMkVMFYnsEE5ESNsI5EqL0F1OgQ&limit=50&offset="+i+"&jsonp=", success: function(json) {
+		$.ajax({ dataType: "jsonp", url: "http://api.tumblr.com/v2/blog/theenergyissue.tumblr.com/posts?api_key=1MtFaBcb26mHvz5cb9VMqoBzMkVMFYnsEE5ESNsI5EqL0F1OgQ&limit=50&offset="+i+"&jsonp=", success: function(json) {
 						
 						//Log the response
 						console.log(json.response);
