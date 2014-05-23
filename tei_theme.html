@@ -45,6 +45,7 @@
 	#Menu-Button {display: block; position: relative; margin-top: 1em; float: left; clear: left;}
 
 	#Footer {max-width: 1200px; margin: 0; padding: 0; display: inline-block; margin: 3em 4em;}
+	
 
 	#tagline{ position:relative; z-index: 99; float:left; width:50%; margin-left:5%;}
 
@@ -66,8 +67,10 @@
 	/* !Global Modules */
 	/* ————————————————————————————————————————————— */ 
 
+	header {margin-top:3em;}
 	header .right{ margin-left:20em; margin-right:4em; }
 	footer {text-align: center; margin: 6em 0;}
+	
 	nav {background: none; outline: none; border: 1px solid silver;font: normal 16px/1.1em Arial, Helvetica, sans-serif; border-radius: 0.5em; cursor: pointer; margin: 0; overflow: hidden; white-space: nowrap;}
 	nav a { padding: 0.75em; border-left: 1px solid silver; display: block; float: left;}
 	nav a:hover {background-color: black; color: white;}
@@ -91,7 +94,7 @@
 	/* ————————————————————————————————————————————— */
 	/* !Index Modules */
 	/* ————————————————————————————————————————————— */ 
-	#Index{padding-top:300px;}
+	#Index{padding-top:30px; clear:both;}
 	#Index .left {left: -2em;}
 	#Index .right {right: -2em;}
 
@@ -104,7 +107,9 @@
 	.postDate {margin-top:2em;}
 	.postDate.theenergyissue{display: none;}
 
-	.tumblrControls { margin-top:1.5em;}
+	.postTags {font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left; padding-top: 0; float:left; color:#C0C0C0; padding-top:1em;}
+
+	.tumblrControls { padding-top:1.5em; clear:both;}
 
 	#Index .caption, #Index .meta {width:75%;}
 
@@ -135,6 +140,8 @@
 
 	#Footer .title {display: none;}
 	#Footer .body {font-size: 1em; max-width: 1300px; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left;}
+	#Footer #Copyright { font-size:1em;}
+	#Footer .links p { text-align: left; display: block;}
 
 	.likeButton, .reblogButton{width: 20px; display: block; margin-right: 15px; font-size: 2px; float:left; word-spacing: 0; letter-spacing: 0;}
 
@@ -143,7 +150,7 @@
 	.quarter-column {width: 25%; float: right; clear: right;}
 	}
 
-	@media screen and (max-width: 1000px) {
+	@media screen and (max-width: 768px) {
 		#Introduction-Text {width: 100%; float: none; clear: both; }
 		#Logo {margin-bottom: 5em;}	
 		#Social {float: left;}
@@ -467,6 +474,15 @@
 	        	Posted by: <a href="{PostAuthorURL}" target="_blank">{PostAuthorName}</a>
 	        </div>
 
+			{block:HasTags}
+	        <ul class="postTags">
+	        	{block:Tags}
+	        	<li class="tag"><a href="{TagURL}">#{Tag}</a></li>
+	        	{/block:Tags}
+	        </ul>
+		    {/block:HasTags}
+
+
 
 	        <div class="tumblrControls">
 	        	<div class="likeButton">
@@ -503,22 +519,24 @@
 	</main>	
 	
     <footer id="Footer">
-        <script type="text/javascript">
-            $(document).ready(function(){ 
-            	$('#Footer').load('/footer #Permalink > *');
 
-            	$('#logoOn').click(function(){
-            		$(this).hide();
-            		$('#logoOff').show();
-            	});
+    	<div class="quarter-column links">
+			<p id="Copyright">&copy; 2014 &mdash; The Energy Issue. A Columbia University GSAPP initiative launched in partnership with <span style="white-space;nowrap;">Oldcastle&nbsp;BuildingEnvelope&reg;.</span></p>
+		</div>
+		<div class="quarter-column">
+			<a href="http://www.arch.columbia.edu/" target="_blank"><img src="http://therrien-barley.com/CU_logo.png" /></a>
+		</div>
 
-            	$('#logoOff').click(function(){
-            		$(this).hide();
-            		$('#logoOn').show();
-            	});
-
-            });		 		
-        </script>                    
+		<div class="quarter-column">
+			<a href="http://www.oldcastlebe.com/" target="_blank"><img src="http://therrien-barley.com/obe_logo.png" /></a>
+		</div>
+		
+		<div class="quarter-column">
+			<ul id="Social">
+				<li class="ss-icon"><a href="https://twitter.com/theenergyissue">twitter</a></li>
+			</ul>
+		</div>
+                           
     </footer>
     
 </body>
