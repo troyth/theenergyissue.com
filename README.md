@@ -1,4 +1,1 @@
-theenergyissue.com
-==================
-
-Website for The Energy Issue
+# Website for The Energy Issue
