@@ -59,7 +59,7 @@
 	/* !Typography */
 	/* ————————————————————————————————————————————— */ 
 	h1 {font: inherit; margin-bottom: 1em;}		
-	h2 {font: inherit; margin-bottom: 1em; text-transform: uppercase;}		
+	h2 {font: inherit; margin-bottom: 1em;}		
 	blockquote {margin: 0; padding: 0; display: inline-block; line-height: 1em; padding-left:20px;}
 	.quote blockquote { padding:0;}
 	/* ————————————————————————————————————————————— */
@@ -75,7 +75,8 @@
 	.button, button{background: none; outline: none; border: 1px solid silver;font: normal 16px/1.1em Arial, Helvetica, sans-serif; border-radius: 0.5em; cursor: pointer; margin: 0; overflow: hidden;display: block;}
 	.ss-icon {margin-right: 0.4em;}
 	.post {display: block;}
-	.link, .quote {text-align: left; margin: 0; display: block; font-size: 2em; line-height: .85em;}			 
+	.link, .quote, .text h2.title {text-align: left; margin: 0; display: block; font-size: 2em; line-height: .85em;, text-transform: none;}		
+	.text h2.title {margin-bottom: 1em;}	 
 	.link blockquote {display: inline; background-position: 0 bottom; background-repeat: repeat-x; background-image: url(underline.png)}
 	.source {font-style: italic;}		
 	.tag {display: inline-block;}
@@ -94,9 +95,16 @@
 	#Index .left {left: -2em;}
 	#Index .right {right: -2em;}
 
-	#Index .post { width: 40%; margin: 2em 5% 7em;}
+	#Index .post { width: 38%; margin: 2em 6% 7em;}
 
-	#Index .readmore{ font:0.8em/1em Arial, Helvetica, sans-serif; color:#0c0c0c; margin-top:1em;}
+	#Index .via .theenergyissue {display: none;}
+
+	#Index .read_more{ font:0.8em/1em Arial, Helvetica, sans-serif; color:#0c0c0c; margin-top:1em;}
+
+	.postDate {margin-top:2em;}
+	.postDate.theenergyissue{display: none;}
+
+	.tumblrControls { margin-top:1.5em;}
 
 	#Index .caption, #Index .meta {width:75%;}
 
@@ -336,9 +344,11 @@
         {block:Quote}
 				
         <div class="quote">
-            <blockquote class="words {Length}">
-                &ldquo;{Quote}&rdquo;
-            </blockquote>
+            <a href="{Permalink}" target="_self">
+	            <blockquote class="words {Length}">
+	                &ldquo;{Quote}&rdquo;
+	            </blockquote>
+	        </a>
             <p class="source">&mdash;{Source}</p>
         </div>
         
@@ -445,29 +455,32 @@
 
         	<div class="via">
 	        	{block:ContentSource}
-				[Via <a href="{SourceURL}" target="_blank">{SourceTitle}</a>]
+	        	<span class="{SourceTitle}">
+					[via <a href="{SourceURL}" target="_blank">{SourceTitle}</a>]
+				</span>
 	        	{/block:ContentSource}
 	        </div>
 
-        	<a href="{Permalink}" class="readmore">read more</a>
+        	
 
-        	<div class="postDate">
+        	<div class="postDate {PostAuthorName}">
 	        	Posted by: <a href="{PostAuthorURL}" target="_blank">{PostAuthorName}</a>
 	        </div>
 
 
-
-        	<div class="likeButton">
-	        	{LikeButton color="black"}
-	        </div>
-	        <div class="reblogButton">
-	        	{ReblogButton color="black"}
-	        </div>
-	        {block:NoteCount} 
-	        <div class="notes">
-	        	{NoteCountWithLabel}
-	        </div>
-	        {/block:NoteCount}
+	        <div class="tumblrControls">
+	        	<div class="likeButton">
+		        	{LikeButton color="black"}
+		        </div>
+		        <div class="reblogButton">
+		        	{ReblogButton color="black"}
+		        </div>
+		        {block:NoteCount} 
+		        <div class="notes">
+		        	{NoteCountWithLabel}
+		        </div>
+		        {/block:NoteCount}
+		    </div>
 
 	        
 
