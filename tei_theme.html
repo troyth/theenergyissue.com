@@ -38,17 +38,7 @@
 	#logoOn{ display: block;}
 	#logoOn img, #logoOff img {width: 100%;}
 	#Type {position: relative; display: inline-block; width: 100%;}
-	#IO {border: 1px solid black; z-index: 9; border-radius: 99em; height: 3.1em; width: 51%; position: absolute; top: 0;}
-	#I {text-decoration: none; border-bottom: none; display: block; float: left; height: 3.1em; width: 3.1em; position: absolute; right: 0; z-index: 9999;}
-	#O {text-decoration: none; border-bottom: none; display: block; float: left; height: 3.1em; width: 3.1em; position: absolute; left: 0; z-index: 9999;}
-	#I span {visibility: hidden;}
-	#O-Symbol {height: 0.75em; width: 0.75em; border: 1px solid black; border-radius: 99em; margin: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
-	#I-Symbol {height: 0.75em; width: 0em; border: 1px solid black; margin: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
-	#Toggle-Marker {border: 1px solid black; border-radius: 99em; height: 3.1em; width: 3.1em; position: absolute; top: 0; right: 0; z-index: -1;}
-	#Toggle {margin: -1px; min-width: 3.1em; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; text-decoration: none; border-bottom: none;}
-	#I.target #I-Symbol { border: 1px solid white;}                
-	#I.target ~ #Toggle {min-width: 101%;}
-	#I.target ~ #Toggle #Toggle-Marker {background-color: black;}
+	
 	/* ————————————————————————————————————————————— */
 	/* !Composition */
 	/* ————————————————————————————————————————————— */   
@@ -70,7 +60,8 @@
 	/* ————————————————————————————————————————————— */ 
 	h1 {font: inherit; margin-bottom: 1em;}		
 	h2 {font: inherit; margin-bottom: 1em; text-transform: uppercase;}		
-	blockquote {margin: 0; padding: 0; display: inline-block; line-height: 1em;}
+	blockquote {margin: 0; padding: 0; display: inline-block; line-height: 1em; padding-left:20px;}
+	.quote blockquote { padding:0;}
 	/* ————————————————————————————————————————————— */
 	/* !Global Modules */
 	/* ————————————————————————————————————————————— */ 
@@ -105,6 +96,8 @@
 
 	#Index .post { width: 40%; margin: 2em 5% 7em;}
 
+	#Index .readmore{ font:0.8em/1em Arial, Helvetica, sans-serif; color:#0c0c0c; margin-top:1em;}
+
 	#Index .caption, #Index .meta {width:75%;}
 
 	#Index article {font-size: 1.5em; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; word-spacing: -0.15em; letter-spacing: -0.02em; display: block; position: relative; float:left;}
@@ -135,7 +128,7 @@
 	#Footer .title {display: none;}
 	#Footer .body {font-size: 1em; max-width: 1300px; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left;}
 
-	.likeButton, .reblogButton{width: 20px; display: block; margin-right: 30px; font-size: 2px; float:left; word-spacing: 0; letter-spacing: 0;}
+	.likeButton, .reblogButton{width: 20px; display: block; margin-right: 15px; font-size: 2px; float:left; word-spacing: 0; letter-spacing: 0;}
 
 	@media screen and (max-width: 1300px) {
 	.half-column {width: 75%; float: left; clear: both;}
@@ -344,9 +337,9 @@
 				
         <div class="quote">
             <blockquote class="words {Length}">
-                {Quote}
+                &ldquo;{Quote}&rdquo;
             </blockquote>
-            <p class="source">{Source}</p>
+            <p class="source">&mdash;{Source}</p>
         </div>
         
         {/block:Quote}        
@@ -449,6 +442,25 @@
 
 
         <div class="meta">
+
+        	<div class="via">
+	        	{block:ContentSource}
+				[Via <a href="{SourceURL}" target="_blank">{SourceTitle}</a>]
+	        	{/block:ContentSource}
+	        </div>
+
+        	<a href="{Permalink}" class="readmore">read more</a>
+
+        	<div class="postDate">
+	        	Posted
+	        	{block:Date}
+	        		{12Hour}:{Minutes}{CapitalAmPm} {DayOfMonth} {Month}, {Year}
+	        	{/block:Date}
+	        	by: <a href="{PostAuthorURL}" target="_blank">{PostAuthorName}</a>
+	        </div>
+
+
+
         	<div class="likeButton">
 	        	{LikeButton color="black"}
 	        </div>
@@ -461,22 +473,12 @@
 	        </div>
 	        {/block:NoteCount}
 
-	        <div class="postDate">
-	        	Posted
-	        	{block:Date}
-	        		{12Hour}:{Minutes}{CapitalAmPm} {DayOfMonth} {Month}, {Year}
-	        	{/block:Date}
-	        	by: <a href="{PostAuthorURL}" target="_blank">{PostAuthorName}</a>
-	        </div>
+	        
 
-	        <div>
-	        	{block:ContentSource}
-				Source: <a href="{SourceURL}" target="_blank">{SourceTitle}</a>
-	        	{/block:ContentSource}
-	        </div>
+	        
 
 
-	        <a href="{Permalink}" class="readmore">Click to Read More</a>
+	        
 
         </div><!-- /.meta -->      
         
