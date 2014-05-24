@@ -2,8 +2,8 @@
 <!--
  
       Theme: The Energy Issue
-      Author: Th-ey + Project Projects  [http://jxnblk.com]
-      For: The Energy Ussye  [http://tumblr.com/]
+      Author: Troy Conrad Therrien [github.com/troyth] + Project Projects  [http://jxnblk.com]
+      For: The Energy Issue  [http://theenergyissue.com]
       Terms: Designed for The energy issue.
   
 -->
@@ -15,47 +15,88 @@
 	/* ————————————————————————————————————————————— */
 	/* !Meta */
 	/* ————————————————————————————————————————————— */  
+	@viewport{
+		zoom: 1.0;
+		width: extend-to-zoom;
+	}
+	@-ms-viewport{
+		width: extend-to-zoom;
+		zoom: 1.0;
+	}
 	* {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}                   
 	*:before {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;} 
 	*:after {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -webkit-font-smoothing: antialiased;} 
-	body{margin:0 !important; padding:0 !important;font-size:12px;}
+	body{margin:0 !important; padding:0 !important;font: normal 15px/1.2em Arial, Helvetica, sans-serif; word-spacing: -0.15em;letter-spacing: -0.02em;}
 	a {vertical-align: baseline;}
 	ul, li {display: inline-block; list-style: none; margin: 0; padding: 0;}
 	strong {font-weight: bold;}
 	em {font-style: italic;}
 	p {margin: 0 0 1em 0;}
-	a, a:hover, a:active, a:link {text-decoration: none; outline: none !important; color: inherit;}		
+	a, a:hover, a:active, a:link {text-decoration: underline; outline: none !important; color: inherit;}
+
+	.tag a, .tag a:hover, .tag a:active, .tag a:link, #Social a, #Social a:hover, #Social a:active, #Social a:link, .hyperlink a, .hyperlink a:hover, .hyperlink a:active, .hyperlink a:link {text-decoration: none;}
 	a:hover {opacity: 0.75;}
-	.visibility-hidden {visibility: visible !important; position: relative;}    
-	.hidden {display: none; position: absolute; overflow: hidden;}
+	.hidden {display: none;}
+
+
+	/* TEXT */
+	#menu, #taglineCopy, .link, .quote, .text h2.title {
+		word-spacing: -0.15em;
+		letter-spacing: -0.02em;
+		text-align: left;
+		text-transform: none;
+	}
+
+	#menu, #taglineCopy{
+		font: normal 2.75em/1.1em Arial, Helvetica, sans-serif;
+	}
+
+	.link, .quote, .text h2.title{
+		font: normal 2.3em/1.1em Arial, Helvetica, sans-serif;
+	}
+
+	#menu, #taglineCopy{
+		margin-bottom:0.3em;
+	}
+
+	#menu a{
+		margin-right:15px;
+	}
+
+	#Header, #Footer, #Index{
+		width:90%;
+		margin:0 5%;
+	}
+
 	/* ————————————————————————————————————————————— */
 	/* !Logo */
 	/* ————————————————————————————————————————————— */
 	#Logo * {margin: 0; padding: 0;}
-	#Logo {position: relative; font-size: 100%; z-index: 99; margin: 2em 5%; /* here */} 
-	#logoOn, #logoOff{ float: left; width: 40%;}
+	#Logo {position: relative; font-size: 100%; z-index: 99; margin: 0 5% 2em; width: 42.5%; float: left;} 
+	
 	#logoOff{ display:none; }
 	#logoOn{ display: block;}
 	#logoOn img, #logoOff img {width: 100%;}
-	#Type {position: relative; display: inline-block; width: 100%;}
+
+
 	
 	/* ————————————————————————————————————————————— */
 	/* !Composition */
 	/* ————————————————————————————————————————————— */   
-	#Menu-Button {display: block; position: relative; margin-top: 1em; float: left; clear: left;}
-
-	#Footer {max-width: 1200px; margin: 0; padding: 0; display: inline-block; margin: 3em 4em;}
+	#Footer {max-width: 1200px; margin: 0; padding: 0; display: inline-block; margin: 2em 5%;}
 	
 
-	#tagline{ position:relative; z-index: 99; float:left; width:50%; margin-left:5%;}
+	#tagline{ position:relative; z-index: 99; float:left; width:42.5%; }
+	
 
-	#Copyright {font: normal 4em/1.1em Arial, Helvetica, sans-serif; text-align: left; word-spacing: -0.15em; letter-spacing: -0.02em; float:left; max-width:90%;}
-	#Social {float: right; font-size: 1.5em; max-width: 10%;}
+	#taglineCopy { float:left; max-width:90%;}
+	
+	#Social {float: right; font-size: 1em; max-width: 10%;}
 
-	#Tags {font-size: 1em; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left; -webkit-column-count:3; -moz-column-count:3; column-count:3; padding-top: 0; float: left; clear: left; width: 100%; color:#C0C0C0;}
+	#Tags {font-size: 1em; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left; -webkit-column-count:3; -moz-column-count:3; column-count:3; padding-top: 0; float: left; clear: left; width: 100%; color:black;}
 	.highlight{ color: black;}
 	#Footer-Content {margin: auto; width: 1203px;}
-	#Load-More { display: block; width: 75%; margin: auto; padding: 1em;}
+	#Load-More { width: 150px; height: 40px; text-align: center; margin: 3em auto;}
 	/* ————————————————————————————————————————————— */
 	/* !Typography */
 	/* ————————————————————————————————————————————— */ 
@@ -63,26 +104,21 @@
 	h2 {font: inherit; margin-bottom: 1em;}		
 	blockquote {margin: 0; padding: 0; display: inline-block; line-height: 1em; padding-left:20px;}
 	.quote blockquote { padding:0;}
+	.leftQuote {margin-left:-0.33em;}
 	/* ————————————————————————————————————————————— */
 	/* !Global Modules */
 	/* ————————————————————————————————————————————— */ 
 
-	header {margin-top:3em;}
-	header .right{ margin-left:20em; margin-right:4em; }
+	#Header {margin-top:3em;}
 	footer {text-align: center; margin: 6em 0;}
 	
-	nav {background: none; outline: none; border: 1px solid silver;font: normal 16px/1.1em Arial, Helvetica, sans-serif; border-radius: 0.5em; cursor: pointer; margin: 0; overflow: hidden; white-space: nowrap;}
-	nav a { padding: 0.75em; border-left: 1px solid silver; display: block; float: left;}
-	nav a:hover {background-color: black; color: white;}
-	nav a:first-child {border-left: none;}
-	.button, button{background: none; outline: none; border: 1px solid silver;font: normal 16px/1.1em Arial, Helvetica, sans-serif; border-radius: 0.5em; cursor: pointer; margin: 0; overflow: hidden;display: block;}
 	.ss-icon {margin-right: 0.4em;}
 	.post {display: block;}
-	.link, .quote, .text h2.title {text-align: left; margin: 0; display: block; font-size: 2em; line-height: .85em;, text-transform: none;}		
+		
 	.text h2.title {margin-bottom: 1em;}	 
 	.link blockquote {display: inline; background-position: 0 bottom; background-repeat: repeat-x; background-image: url(underline.png)}
 	.source {font-style: italic;}		
-	.tag {display: inline-block;}
+	.tag {display: inline-block; margin: 0 2px 0 0;}
 
 	article iframe {width: 100%;}
 	.counter li {display: inline-block; color: silver; margin: 0.05em; font-size: 0.75em;}
@@ -94,9 +130,7 @@
 	/* ————————————————————————————————————————————— */
 	/* !Index Modules */
 	/* ————————————————————————————————————————————— */ 
-	#Index{padding-top:30px; clear:both;}
-	#Index .left {left: -2em;}
-	#Index .right {right: -2em;}
+	#Index{padding-top:2em; clear:both;}
 
 	#Index .post { width: 38%; margin: 2em 6% 7em;}
 
@@ -104,16 +138,18 @@
 
 	#Index .read_more{ font:0.8em/1em Arial, Helvetica, sans-serif; color:#0c0c0c; margin-top:1em;}
 
-	.postDate {margin-top:2em;}
+	.postDate {margin-top:1.5em;}
 	.postDate.theenergyissue{display: none;}
 
-	.postTags {font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left; padding-top: 0; float:left; color:#C0C0C0; padding-top:1em;}
+	.postTags {font-size: 1em; text-transform: uppercase; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left; padding-top: 0; float:left; padding-top:1em;}
 
-	.tumblrControls { padding-top:1.5em; clear:both;}
+	.tumblrControls { padding-top:1em; clear:both;}
 
 	#Index .caption, #Index .meta {width:75%;}
 
-	#Index article {font-size: 1.5em; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; word-spacing: -0.15em; letter-spacing: -0.02em; display: block; position: relative; float:left;}
+	.caption{margin-top:1em;}
+
+	#Index article {font-size:1.2em; display: block; position: relative; float:left; text-align: left;}
 	
 	#Index *:hover .arrow {opacity: 1;}
 	#Index .caption iframe {width: 100% !important;}
@@ -122,14 +158,22 @@
 	/* ————————————————————————————————————————————— */
 	/* !Permalink Modules */
 	/* ————————————————————————————————————————————— */ 
-	#Permalink article {font-size: 3vw; width: 100%; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; word-spacing: -0.15em; letter-spacing: -0.02em; margin: 1em; display: inline-block; position: relative; width: inherit;}
+	.Permalink #Logo{ width: 25%;}
+	.Permalink #tagline {width:60%;}
+	.Permalink #taglineCopy { }
+	.Permaline #menu { }
+
+	#Permalink{ margin: 0 5%; width:90%; }
+	#Permalink article { text-align: left; margin: 2em 5%; width:90%;}
+	#Permalink article img{max-width:100%;height:auto;}
+
+	#Permalink article {font-size: 1.5em; line-height: 1.2em; display: inline-block; position: relative; clear:both; float:left;}
 	#Permalink .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 3em; height: 100%; line-height: 15em; opacity: 1; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
 	#Permalink .caption {text-align: left; width: 24em; }
 	#Permalink .photoset {height: auto; width: 24em; position: relative;}
 	#Permalink .slideshow {height: 15em; width: 24em;position: relative; display: block;}
 	#Permalink .readmore {display: none;}
 	#Permalink .counter {position: absolute; top: 15; left: 0; right: 0; margin: 0;}
-	#Permalink .text {width: 24em; text-align: left;}
 	#Permalink .left {left: -3em;}
 	#Permalink .right {right: -3em;}
 	#Permalink .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 3em; height: 100%; line-height: 15em; opacity: 1; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
@@ -145,12 +189,25 @@
 
 	.likeButton, .reblogButton{width: 20px; display: block; margin-right: 15px; font-size: 2px; float:left; word-spacing: 0; letter-spacing: 0;}
 
-	@media screen and (max-width: 1300px) {
-	.half-column {width: 75%; float: left; clear: both;}
-	.quarter-column {width: 25%; float: right; clear: right;}
+/*
+	@media screen and (max-width:1500px){
+		#Logo { width: 35%;} 
+		#tagline { width:50%; }
+	}*/
+
+	@media screen and (min-width:1300px){
+		#Header, #Index, #Permalink{ margin: 2em auto; max-width: 1300px; text-align: center;}
+	}
+
+	@media screen and (max-width:1180px){
+		body{ font-size:16px;}
 	}
 
 	@media screen and (max-width: 768px) {
+		#Logo { margin: 2em 5% 0; width: 90%;} 
+		#tagline { margin: 2em 5%; width:90%; }
+		#taglineCopy { font: normal 2em/1.1em Arial, Helvetica, sans-serif;}
+
 		#Introduction-Text {width: 100%; float: none; clear: both; }
 		#Logo {margin-bottom: 5em;}	
 		#Social {float: left;}
@@ -160,10 +217,10 @@
 
 	@media screen and (max-width: 700px) {
 		#Logo {margin: auto; left: 0; right: 0; font-size: 7px !important; margin-bottom: 5em;}
-		#Copyright, #Social {display: none;}
+		#taglineCopy, #Social {display: none;}
 		#Introduction-Text {width: 100%; float: none; clear: both; margin: auto;}
 		#Tags {display: none;}
-		header {}
+	
 		footer {display: none;}	
 		article {display: block; margin-bottom: 5em;}
 		.photoset {width: 100%; height: 400px;}
@@ -181,7 +238,7 @@
 	</head>
 
 	<body>
-		<header>
+		<header id="Header" {block:PermalinkPage}class="Permalink"{/block:PermalinkPage}>
 			<div id="Logo">
 				<a id="logoOn" href="javascript:(function(){var twerk = document.getElementById('EnergyTwerk'); if(document.getElementById('EnergyTwerk')==null){ var i = document.getElementById('I'); if(document.getElementById('I')){i.className = 'target';} var newcss = 'p, h2, h1, h3, h4, h5, h6, img, .img, span, div, header, li { -webkit-transform-origin: 50% 50%; -moz-transform-origin: 50% 50%; transform-origin: 50% 50%; -webkit-animation:rotate 0.01s linear infinite alternate; -moz-animation:rotate 0.01s linear infinite alternate; -moz-animation:rotate 0.01s linear infinite alternate; } @-webkit-keyframes rotate { 0% {-webkit-transform: rotate(0deg);} 100% {-webkit-transform: rotate(-0.3deg);}} @-moz-keyframes rotate { from {-moz-transform: rotate(0deg);} to {-moz-transform: rotate(-0.3deg);} } @-keyframes rotate { 0% {-transform: rotate(0deg);} 100% {-transform: rotate(-0.3deg);}}'; if ('\v'=='v') /* ie only */{ document.createStyleSheet().cssText = newcss;} else { var tag = document.createElement('style'); tag.id = 'EnergyTwerk'; tag.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(tag); tag[ (typeof document.body.style.WebkitAppearance=='string') /* webkit only */ ? 'innerText' : 'innerHTML'] = newcss;};} else {var i = document.getElementById('I'); if(document.getElementById('I')){i.className = ''}; var twerk = document.getElementById('EnergyTwerk'); twerk.outerHTML = '';}})();">
 					<img src="http://therrien-barley.com/theenergyissue_logo_on.svg">
@@ -196,74 +253,76 @@
 			<script type="text/javascript">document.getElementById('logoOff').click();</script>  
 			<script type="text/javascript">setTimeout(function() {var logoOn = document.getElementById('logoOn').click();}, 3000);</script>
 
-			<div id="tagline" class="right">
+			<div id="tagline">
 
-		        <p id="Copyright">The Energy Issue is a Columbia University GSAPP initiative to make energy a cultural issue, launched in partnership with <span style="white-space;nowrap;">Oldcastle&nbsp;BuildingEnvelope&reg;.</span></p>
+		        <p id="taglineCopy">The Energy Issue is a Columbia University GSAPP initiative to make energy a cultural issue, launched in partnership with <span style="white-space;nowrap;">Oldcastle&nbsp;BuildingEnvelope&reg;.</span></p>
 
 		        <ul id="Social">
 		            <li class='ss-icon'><a href="https://twitter.com/theenergyissue" target="_blank">twitter</a></li>
 		        </ul>
 
-		        <ul id="Tags" {block:PermalinkPage}class="hidden"{/block:PermalinkPage}>
-					
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/architecture">#architecture</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/design">#design</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/tech">#tech</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/news">#news</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/oil">#oil</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/culture">#culture</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/graph">#art</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/fashion">#fashion</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/fracking">#fracking</a></li>
-					<li class="tag highlight"><a href="http://testenergyissue.tumblr.com/tagged/astrology">#astrology</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/music">#music</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/youth">#youth</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/celebrity">#celebrity</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/sports">#sports</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/environment">#environment</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/economics">#economics</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/climate">#climate</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/gas">#gas</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/astronomy">#astronomy</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/food">#food</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/statistic">#statistic</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/medicine">#medicine</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/graph">#graph</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/nature">#nature</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/coal">#coal</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/politics">#politics</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/craft">#craft</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/quote">#quote</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/entertainment">#entertainment</a></li>
-					<li class="tag highlight"><a href="http://testenergyissue.tumblr.com/tagged/weather">#weather</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/gif">#gif</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/water">#water</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/funny">#funny</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/animals">#animals</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/advertising">#advertising</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/physics">#physics</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/china">#china</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/history">#history</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/urbanism">#urbanism</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/africa">#africa</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/theory">#theory</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/war">#war</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/wildlife">#wildlife</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/electricity">#electricity</a></li>
-					<li class="tag highlight"><a href="http://testenergyissue.tumblr.com/tagged/sleep">#sleep</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/biology">#biology</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/travel">#travel</a></li>
-					<li class="tag"><a href="http://testenergyissue.tumblr.com/tagged/chemistry">#chemistry</a></li>					
-					
-		        </ul>
-
 		        {block:HasPages}
-			        <nav id="Menu-Button">
+			        <nav id="menu">
 			        {block:Pages}
 			           <a href="{URL}" title="{Label}">{Label}</a>
 			        {/block:Pages}
 			        </nav>
 			    {/block:HasPages}
+
+		        <ul id="Tags" {block:PermalinkPage}class="hidden"{/block:PermalinkPage}>
+					
+					<li class="tag"><a href="/tagged/architecture">#architecture</a></li>
+					<li class="tag"><a href="/tagged/design">#design</a></li>
+					<li class="tag"><a href="/tagged/tech">#tech</a></li>
+					<li class="tag"><a href="/tagged/news">#news</a></li>
+					<li class="tag"><a href="/tagged/oil">#oil</a></li>
+					<li class="tag"><a href="/tagged/culture">#culture</a></li>
+					<li class="tag"><a href="/tagged/graph">#art</a></li>
+					<li class="tag"><a href="/tagged/fashion">#fashion</a></li>
+					<li class="tag"><a href="/tagged/fracking">#fracking</a></li>
+					<li class="tag highlight"><a href="/tagged/astrology">#astrology</a></li>
+					<li class="tag"><a href="/tagged/music">#music</a></li>
+					<li class="tag"><a href="/tagged/youth">#youth</a></li>
+					<li class="tag"><a href="/tagged/celebrity">#celebrity</a></li>
+					<li class="tag"><a href="/tagged/sports">#sports</a></li>
+					<li class="tag"><a href="/tagged/environment">#environment</a></li>
+					<li class="tag"><a href="/tagged/economics">#economics</a></li>
+					<li class="tag"><a href="/tagged/climate">#climate</a></li>
+					<li class="tag"><a href="/tagged/gas">#gas</a></li>
+					<li class="tag"><a href="/tagged/astronomy">#astronomy</a></li>
+					<li class="tag"><a href="/tagged/food">#food</a></li>
+					<li class="tag"><a href="/tagged/statistic">#statistic</a></li>
+					<li class="tag"><a href="/tagged/medicine">#medicine</a></li>
+					<li class="tag"><a href="/tagged/graph">#graph</a></li>
+					<li class="tag"><a href="/tagged/nature">#nature</a></li>
+					<li class="tag"><a href="/tagged/coal">#coal</a></li>
+					<li class="tag"><a href="/tagged/politics">#politics</a></li>
+					<li class="tag"><a href="/tagged/craft">#craft</a></li>
+					<li class="tag"><a href="/tagged/quote">#quote</a></li>
+					<li class="tag"><a href="/tagged/entertainment">#entertainment</a></li>
+					<li class="tag highlight"><a href="/tagged/weather">#weather</a></li>
+					<li class="tag"><a href="/tagged/gif">#gif</a></li>
+					<li class="tag"><a href="/tagged/water">#water</a></li>
+					<li class="tag"><a href="/tagged/funny">#funny</a></li>
+					<li class="tag"><a href="/tagged/animals">#animals</a></li>
+					<li class="tag"><a href="/tagged/advertising">#advertising</a></li>
+					<li class="tag"><a href="/tagged/physics">#physics</a></li>
+					<li class="tag"><a href="/tagged/china">#china</a></li>
+					<li class="tag"><a href="/tagged/history">#history</a></li>
+					<li class="tag"><a href="/tagged/urbanism">#urbanism</a></li>
+					<li class="tag"><a href="/tagged/africa">#africa</a></li>
+					<li class="tag"><a href="/tagged/theory">#theory</a></li>
+					<li class="tag"><a href="/tagged/war">#war</a></li>
+					<li class="tag"><a href="/tagged/wildlife">#wildlife</a></li>
+					<li class="tag"><a href="/tagged/electricity">#electricity</a></li>
+					<li class="tag highlight"><a href="/tagged/sleep">#sleep</a></li>
+					<li class="tag"><a href="/tagged/biology">#biology</a></li>
+					<li class="tag"><a href="/tagged/travel">#travel</a></li>
+					<li class="tag"><a href="/tagged/chemistry">#chemistry</a></li>					
+					
+		        </ul>
+
+		        
 
 		    </div><!-- /#tagline -->
 		</header><!-- /#head -->
@@ -353,7 +412,7 @@
         <div class="quote">
             <a href="{Permalink}" target="_self">
 	            <blockquote class="words {Length}">
-	                &ldquo;{Quote}&rdquo;
+	                <span class="leftQuote">&ldquo;</span>{Quote}&rdquo;
 	            </blockquote>
 	        </a>
             <p class="source">&mdash;{Source}</p>
@@ -371,7 +430,7 @@
 	        	
 	        	<!-- !CAPTION----------------------------------------- -->
 	        	
-                <div class="hyperlink"><a href="{URL}" {Target}>{Name}</a></div>
+                <div class="hyperlink"><a href="{URL}" {Target}>{Name}&nbsp;→</a></div>
                 {block:Description}{Description}{/block:Description}
 
 
@@ -484,7 +543,7 @@
 
 
 
-	        <div class="tumblrControls">
+	        <div class="tumblrControls{block:PermalinkPage} hidden{/block:PermalinkPage}">
 	        	<div class="likeButton">
 		        	{LikeButton color="black"}
 		        </div>
@@ -509,11 +568,22 @@
         
     </article>
 
-    {/block:Posts}     
+    {/block:Posts}  
+
+	{block:Pagination}
+		<nav id="Load-More">
 		
-    {block:NextPage}
-        <a id="Load-More" href="{NextPage}">Load More Posts</a>	
-    {/block:NextPage}
+		{block:NextPage}
+			<a href="{NextPage}">Older Posts</a>
+		{/block:NextPage}
+
+		{block:PreviousPage}
+			<a href="{PreviousPage}">Newer Posts</a>
+		{/block:PreviousPage}
+
+		</nav>
+	{/block:Pagination}   
+		
                
         
 	</main>	
