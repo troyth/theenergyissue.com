@@ -29,6 +29,7 @@
 	body{margin:0 !important; padding:0 !important;font: normal 15px/1.2em Arial, Helvetica, sans-serif; word-spacing: -0.15em;letter-spacing: -0.02em;}
 	a {vertical-align: baseline;}
 	ul, li {display: inline-block; list-style: none; margin: 0; padding: 0;}
+
 	strong {font-weight: bold;}
 	em {font-style: italic;}
 	p {margin: 0 0 1em 0;}
@@ -166,6 +167,8 @@
 	#Permalink{ margin: 0 5%; width:90%; }
 	#Permalink article { text-align: left; margin: 2em 5%; width:90%;}
 	#Permalink article img{max-width:100%;height:auto;}
+
+	#Permalink .notes li{ display:block; list-style:none; margin-bottom:.3em;}
 
 	#Permalink article {font-size: 1.5em; line-height: 1.2em; display: inline-block; position: relative; clear:both; float:left;}
 	#Permalink .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 3em; height: 100%; line-height: 15em; opacity: 1; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
@@ -557,7 +560,10 @@
 		        {/block:NoteCount}
 		    </div>
 
-	        
+	        {block:PostNotes}
+	        	{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}
+	        	{PostNotes}
+	        {/block:PostNotes}
 
 	        
 
