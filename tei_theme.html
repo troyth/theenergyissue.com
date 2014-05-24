@@ -41,14 +41,14 @@
 
 
 	/* TEXT */
-	#menu, #taglineCopy, .link, .quote, .text h2.title {
+	#menu, #taglineCopy, h2, .link, .quote, .text h2.title {
 		word-spacing: -0.15em;
 		letter-spacing: -0.02em;
 		text-align: left;
 		text-transform: none;
 	}
 
-	#menu, #taglineCopy{
+	#menu, #taglineCopy, h2{
 		font: normal 2.75em/1.1em Arial, Helvetica, sans-serif;
 	}
 
@@ -103,7 +103,7 @@
 	/* ————————————————————————————————————————————— */ 
 	h1 {font: inherit; margin-bottom: 1em;}		
 	h2 {font: inherit; margin-bottom: 1em;}		
-	blockquote {margin: 0; padding: 0; display: inline-block; line-height: 1em; padding-left:20px;}
+	blockquote {margin: 0; padding: 0; display: inline-block; padding-left:20px;}
 	.quote blockquote { padding:0;}
 	.leftQuote {margin-left:-0.33em;}
 	/* ————————————————————————————————————————————— */
@@ -122,9 +122,6 @@
 	.tag {display: inline-block; margin: 0 2px 0 0;}
 
 	article iframe {width: 100%;}
-	.counter li {display: inline-block; color: silver; margin: 0.05em; font-size: 0.75em;}
-	.current {visibility: visible !important; color: black !important;}
-	.photoset img {position: absolute; max-width: 100%; max-height: 100%; height: auto; width: auto; margin: auto; bottom: 0; left: 0; right: 0;}
 	.half-column {width: 50%; float: left;}
 	.quarter-column {width: 25%; float: left;}
 	.half-column, .quarter-column  {margin-bottom: 1em;}
@@ -137,7 +134,7 @@
 
 	#Index .via .theenergyissue {display: none;}
 
-	#Index .read_more{ font:0.8em/1em Arial, Helvetica, sans-serif; color:#0c0c0c; margin-top:1em;}
+	#Index .readmore{ margin-top:1em;}
 
 	.postDate {margin-top:1.5em;}
 	.postDate.theenergyissue{display: none;}
@@ -155,6 +152,7 @@
 	#Index *:hover .arrow {opacity: 1;}
 	#Index .caption iframe {width: 100% !important;}
 	#Index .photoset {width: 100%; position: relative;}
+	#Index .photoset, #Index .photo { margin-bottom: 1em;}
 	#Index .photo img {width:100%;}
 	/* ————————————————————————————————————————————— */
 	/* !Permalink Modules */
@@ -165,15 +163,21 @@
 	.Permaline #menu { }
 
 	#Permalink{ margin: 0 5%; width:90%; }
-	#Permalink article { text-align: left; margin: 2em 5%; width:90%;}
+	#Permalink article { font-size:1.2em; text-align: left; margin: 2em 5%; width:90%;}
 	#Permalink article img{max-width:100%;height:auto;}
 
-	#Permalink .notes li{ display:block; list-style:none; margin-bottom:.3em;}
 
-	#Permalink article {font-size: 1.5em; line-height: 1.2em; display: inline-block; position: relative; clear:both; float:left;}
+
+	#Permalink .notesContainer { padding: 1em;}
+	#Permalink .notesContainer ol{padding:0; margin:0;}
+	#Permalink .notesContainer li{ display:block; list-style:none; margin-bottom:.3em;}
+
+	#Permalink article {font-size: 1.2em; line-height: 1.2em; display: inline-block; position: relative; clear:both; float:left;}
 	#Permalink .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 3em; height: 100%; line-height: 15em; opacity: 1; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
-	#Permalink .caption {text-align: left; width: 24em; }
-	#Permalink .photoset {height: auto; width: 24em; position: relative;}
+	#Permalink .caption {text-align: left; width: 24em; clear:both;}
+	#Permalink .photosetPhotos {margin:0 1em 1em 0; float:left; display:inline-block;}
+
+
 	#Permalink .slideshow {height: 15em; width: 24em;position: relative; display: block;}
 	#Permalink .readmore {display: none;}
 	#Permalink .counter {position: absolute; top: 15; left: 0; right: 0; margin: 0;}
@@ -254,7 +258,7 @@
 
 			</div><!-- /#logo -->
 			<script type="text/javascript">document.getElementById('logoOff').click();</script>  
-			<script type="text/javascript">setTimeout(function() {var logoOn = document.getElementById('logoOn').click();}, 3000);</script>
+			<script type="text/javascript">setTimeout(function() {var logoOn = document.getElementById('logoOn').click();}, 2000);</script>
 
 			<div id="tagline">
 
@@ -271,6 +275,10 @@
 			        {/block:Pages}
 			        </nav>
 			    {/block:HasPages}
+			    	<h2>Posts tagged {Tag}</h2>
+			    {block:TagPage}
+
+			    {/block:TagPage}
 
 		        <ul id="Tags" {block:PermalinkPage}class="hidden"{/block:PermalinkPage}>
 					
@@ -366,10 +374,27 @@
         
         <div class="photoset">
 
-        	{Photoset-400}
+        	{block:IndexPage}
+        		{Photoset-400}
+        	{/block:IndexPage}
+
+        	{block:PermalinkPage}
+	        	{block:Photoset}
+	        		{block:Photos}
+	        			<div class="photosetPhotos">
+	        				<img src="{PhotoURL-400}" alt="{PhotoAlt}" />
+				        </div>
+				        
+				        
+	                {/block:Photos}
+	            {/block:Photoset}
+            {/block:PermalinkPage} 
 
             {block:Caption}
             	<div class="caption">{Caption}</div>
+            	{block:IndexPage}
+            		<a href="{Permalink}" class="readmore">Permalink&nbsp;→</a>
+            	{/block:IndexPage}
             {/block:Caption}
         </div>	
         
@@ -401,6 +426,9 @@
 
         	{block:Caption}
         	<div class="caption">{Caption}</div>
+    		{block:IndexPage}
+        		<a href="{Permalink}" class="readmore">Permalink&nbsp;→</a>
+        	{/block:IndexPage}
         	{/block:Caption}
         </div>	
         
@@ -455,7 +483,12 @@
 	        
         	<!-- !CAPTION----------------------------------------- -->
 
-        	{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+        	{block:Caption}
+        	<div class="caption">{Caption}</div>
+        	{block:IndexPage}
+            		<a href="{Permalink}" class="readmore">Permalink&nbsp;→</a>
+            	{/block:IndexPage}
+        	{/block:Caption}
         	
         </div>	
         
@@ -475,7 +508,10 @@
 	        
         	<!-- !CAPTION----------------------------------------- -->
 
-        	<div class="caption"><a href=""></a></div>	        	        
+        	<div class="caption"><a href=""></a></div>	 
+        	{block:IndexPage}
+        		<a href="{Permalink}" class="readmore">Permalink&nbsp;→</a>
+        	{/block:IndexPage}       	        
 	        
 	      </div>  
         
@@ -501,7 +537,13 @@
             <ul class="conversation">
                 <li class="line "></li>
             </ul>
+
+            {block:IndexPage}
+	    		<a href="{Permalink}" class="readmore">Permalink&nbsp;→</a>
+	    	{/block:IndexPage}
         </div>
+
+
         
         {/block:Chat}
         
@@ -546,7 +588,7 @@
 
 
 
-	        <div class="tumblrControls{block:PermalinkPage} hidden{/block:PermalinkPage}">
+	        <div class="tumblrControls">
 	        	<div class="likeButton">
 		        	{LikeButton color="black"}
 		        </div>
@@ -561,8 +603,9 @@
 		    </div>
 
 	        {block:PostNotes}
-	        	{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}
-	        	{PostNotes}
+	        	<div class="notesContainer">
+		        	{PostNotes}
+		        </div>
 	        {/block:PostNotes}
 
 	        
