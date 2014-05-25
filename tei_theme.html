@@ -10,7 +10,6 @@
 <html>
 	<head>
 	    <link rel="stylesheet" href="http://dev.projectprojects.com/theenergyissue/final/ss-social/webfonts/ss-social.css">
-	    <script src="http://dev.projectprojects.com/theenergyissue/final/modernizr.custom.59295.js"></script>
 	    <style>
 	/* ————————————————————————————————————————————— */
 	/* !Meta */
@@ -35,7 +34,7 @@
 	p {margin: 0 0 1em 0;}
 	a, a:hover, a:active, a:link {text-decoration: underline; outline: none !important; color: inherit;}
 
-	.tag a, .tag a:hover, .tag a:active, .tag a:link, #Social a, #Social a:hover, #Social a:active, #Social a:link, .hyperlink a, .hyperlink a:hover, .hyperlink a:active, .hyperlink a:link {text-decoration: none;}
+	.tag a, .tag a:hover, .tag a:active, .tag a:link, .ss-icon a, .ss-icon a:hover, .ss-icon a:active, .ss-icon a:link, .hyperlink a, .hyperlink a:hover, .hyperlink a:active, .hyperlink a:link {text-decoration: none;}
 	a:hover {opacity: 0.75;}
 	.hidden {display: none;}
 
@@ -48,7 +47,11 @@
 		text-transform: none;
 	}
 
-	#menu, #taglineCopy, h2{
+	#menu{
+		font: normal 2.75em/1.1em Arial, Helvetica, sans-serif;
+	}
+
+	#taglineCopy, h2{
 		font: normal 2.75em/1.1em Arial, Helvetica, sans-serif;
 	}
 
@@ -58,10 +61,6 @@
 
 	#menu, #taglineCopy{
 		margin-bottom:0.3em;
-	}
-
-	#menu a{
-		margin-right:15px;
 	}
 
 	#Header, #Footer, #Index{
@@ -80,7 +79,59 @@
 	#logoOn img, #logoOff img {width: 100%;}
 
 
-	
+	.functionSelect{
+		display: block;
+		float:left;
+		margin-right:15px;
+		border:1px solid;
+		background-color:transparent;
+		color:black;
+		font-size:.5em;
+		float:left;
+		margin-bottom:1em;
+	}
+
+	/*
+	.functionSelect:after{
+		content:"/";
+		float:right;
+		color:black;
+	}*/
+
+	.customSelect { 
+	/* This is the default class that is used */
+	/* Put whatever custom styles you want here */
+		border:1px solid;
+		background-color:transparent;
+		color:black;
+		font-size:1em;
+		float:left;
+	}
+
+	.customSelect.customSelectHover {
+	/* Styles for when the select box is hovered */
+		color:white;
+		background-color: black;
+		cursor:pointer;
+	}
+
+	.customSelect.customSelectOpen {
+	/* Styles for when the select box is open */
+		color:white;
+		background-color: black;
+	}
+
+	.customSelect.customSelectFocus {
+	/* Styles for when the select box is in focus */
+	}
+
+	.customSelectInner {
+	/* You can style the inner box too */
+		padding:1em;
+	}
+
+
+
 	/* ————————————————————————————————————————————— */
 	/* !Composition */
 	/* ————————————————————————————————————————————— */   
@@ -90,9 +141,7 @@
 	#tagline{ position:relative; z-index: 99; float:left; width:42.5%; }
 	
 
-	#taglineCopy { float:left; max-width:90%;}
-	
-	#Social {float: right; font-size: 1em; max-width: 10%;}
+	#taglineCopy { float:left; width:90%;}
 
 	#Tags {font-size: 1em; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left; -webkit-column-count:3; -moz-column-count:3; column-count:3; padding-top: 0; float: left; clear: left; width: 100%; color:black;}
 	.highlight{ color: black;}
@@ -113,7 +162,9 @@
 	#Header {margin-top:3em;}
 	footer {text-align: center; margin: 6em 0;}
 	
-	.ss-icon {margin-right: 0.4em;}
+	#Social {float:right; display: block; width:10%; position:relative; top:.5em;}
+
+	.ss-icon {display:block; font-size:1.5em; margin-bottom:.25em; text-align: right;}
 	.post {display: block;}
 		
 	.text h2.title {margin-bottom: 1em;}	 
@@ -128,13 +179,15 @@
 	/* ————————————————————————————————————————————— */
 	/* !Index Modules */
 	/* ————————————————————————————————————————————— */ 
-	#Index{padding-top:2em; clear:both;}
+	#Index{padding-top:2em; clear:both; padding-left:2.5%;}
 
-	#Index .post { width: 38%; margin: 2em 6% 7em;}
+	#Index .post { width: 43.5%; margin: 2em 2.5% 7em 2.5%}
 
 	#Index .via .theenergyissue {display: none;}
 
-	#Index .readmore{ margin-top:1em;}
+	#Index .read_more{ margin-top:1em;}
+
+	#Index .permalinkLink{ display: inline-block;}
 
 	.postDate {margin-top:1.5em;}
 	.postDate.theenergyissue{display: none;}
@@ -164,26 +217,21 @@
 
 	#Permalink{ margin: 0 5%; width:90%; }
 	#Permalink article { font-size:1.2em; text-align: left; margin: 2em 5%; width:90%;}
+	#Permalink article .text {width:54%;}
 	#Permalink article img{max-width:100%;height:auto;}
 
 
 
-	#Permalink .notesContainer { padding: 1em;}
-	#Permalink .notesContainer ol{padding:0; margin:0;}
+	#Permalink .notesContainer { float:left;}
+	#Permalink .notesContainer ol{ padding: 1em 0; margin: 0; clear: both;}
 	#Permalink .notesContainer li{ display:block; list-style:none; margin-bottom:.3em;}
 
 	#Permalink article {font-size: 1.2em; line-height: 1.2em; display: inline-block; position: relative; clear:both; float:left;}
 	#Permalink .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 3em; height: 100%; line-height: 15em; opacity: 1; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
-	#Permalink .caption {text-align: left; width: 24em; clear:both;}
-	#Permalink .photosetPhotos {margin:0 1em 1em 0; float:left; display:inline-block;}
-
-
-	#Permalink .slideshow {height: 15em; width: 24em;position: relative; display: block;}
-	#Permalink .readmore {display: none;}
-	#Permalink .counter {position: absolute; top: 15; left: 0; right: 0; margin: 0;}
-	#Permalink .left {left: -3em;}
-	#Permalink .right {right: -3em;}
-	#Permalink .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 3em; height: 100%; line-height: 15em; opacity: 1; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
+	#Permalink .caption {text-align: left; width: 35%; clear:both;}
+	#Permalink .photosetPhotos {margin:0 1em 1em 0; display:inline-block;}
+	#Permalink .postTags { width:35%;}
+	#Permalink .read_more {display: none;}
 
 	/* ————————————————————————————————————————————— */
 	/* !Footer */
@@ -195,6 +243,8 @@
 	#Footer .links p { text-align: left; display: block;}
 
 	.likeButton, .reblogButton{width: 20px; display: block; margin-right: 15px; font-size: 2px; float:left; word-spacing: 0; letter-spacing: 0;}
+
+	.noteCount, .permalinkLink { margin-right: 15px; float:left;}
 
 /*
 	@media screen and (max-width:1500px){
@@ -217,18 +267,13 @@
 
 		#Introduction-Text {width: 100%; float: none; clear: both; }
 		#Logo {margin-bottom: 5em;}	
-		#Social {float: left;}
 		article {margin-bottom: 1em;}
 		.half-column, .quarter-column {width: 100%; float: left; clear: both; text-align: left;}
 	}
 
 	@media screen and (max-width: 700px) {
 		#Logo {margin: auto; left: 0; right: 0; font-size: 7px !important; margin-bottom: 5em;}
-		#taglineCopy, #Social {display: none;}
-		#Introduction-Text {width: 100%; float: none; clear: both; margin: auto;}
-		#Tags {display: none;}
-	
-		footer {display: none;}	
+
 		article {display: block; margin-bottom: 5em;}
 		.photoset {width: 100%; height: 400px;}
 		.slideshow {width: 100%; height: 100%;}
@@ -240,11 +285,22 @@
 	    <!--[if lt IE 9]>
 		<link rel="stylesheet" type="text/css" href="http://dev.projectprojects.com/theenergyissue/final/ie.css" />
 	<![endif]-->
+		<script src="http://therrien-barley.com/modernizr.js"></script>
 	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	    <script src="http://therrien-barley.com/jquery.customSelect.min.js"></script>
 	    <title>{Title}</title>
 	</head>
 
 	<body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=218065934884656&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
 		<header id="Header" {block:PermalinkPage}class="Permalink"{/block:PermalinkPage}>
 			<div id="Logo">
 				<a id="logoOn" href="javascript:(function(){var twerk = document.getElementById('EnergyTwerk'); if(document.getElementById('EnergyTwerk')==null){ var i = document.getElementById('I'); if(document.getElementById('I')){i.className = 'target';} var newcss = 'p, h2, h1, h3, h4, h5, h6, img, .img, span, div, header, li { -webkit-transform-origin: 50% 50%; -moz-transform-origin: 50% 50%; transform-origin: 50% 50%; -webkit-animation:rotate 0.01s linear infinite alternate; -moz-animation:rotate 0.01s linear infinite alternate; -moz-animation:rotate 0.01s linear infinite alternate; } @-webkit-keyframes rotate { 0% {-webkit-transform: rotate(0deg);} 100% {-webkit-transform: rotate(-0.3deg);}} @-moz-keyframes rotate { from {-moz-transform: rotate(0deg);} to {-moz-transform: rotate(-0.3deg);} } @-keyframes rotate { 0% {-transform: rotate(0deg);} 100% {-transform: rotate(-0.3deg);}}'; if ('\v'=='v') /* ie only */{ document.createStyleSheet().cssText = newcss;} else { var tag = document.createElement('style'); tag.id = 'EnergyTwerk'; tag.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(tag); tag[ (typeof document.body.style.WebkitAppearance=='string') /* webkit only */ ? 'innerText' : 'innerHTML'] = newcss;};} else {var i = document.getElementById('I'); if(document.getElementById('I')){i.className = ''}; var twerk = document.getElementById('EnergyTwerk'); twerk.outerHTML = '';}})();">
@@ -264,20 +320,32 @@
 
 		        <p id="taglineCopy">The Energy Issue is a Columbia University GSAPP initiative to make energy a cultural issue, launched in partnership with <span style="white-space;nowrap;">Oldcastle&nbsp;BuildingEnvelope&reg;.</span></p>
 
-		        <ul id="Social">
-		            <li class='ss-icon'><a href="https://twitter.com/theenergyissue" target="_blank">twitter</a></li>
-		        </ul>
+		        <div id="Social">
+		        	<div class='ss-icon'>
+		        		<a href="https://twitter.com/theenergyissue" target="_blank">twitter</a>
+		        	</div>
+		        	<div class="ss-icon">
+		        		<div class="fb-like" data-href="https://www.facebook.com/theenergyissue" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+		        	</div>
+		        </div>
+
 
 		        {block:HasPages}
 			        <nav id="menu">
-			        {block:Pages}
-			           <a href="{URL}" title="{Label}">{Label}</a>
-			        {/block:Pages}
-			        </nav>
-			    {/block:HasPages}
-			    	<h2>Posts tagged {Tag}</h2>
-			    {block:TagPage}
+			        	<form>
+							<select id="menuSelect" class="functionSelect" name="menuSelect">
+							    <option value="/">Home</option>
+							    <option value="/about">About</option>
+							    <option value="/5klei">Symposium</option>
+							</select>
+						</form>
 
+			        </nav><!-- /#menu -->
+			    {/block:HasPages}
+
+			    	
+			    {block:TagPage}
+			    	<h2>Posts tagged {Tag}</h2>
 			    {/block:TagPage}
 
 		        <ul id="Tags" {block:PermalinkPage}class="hidden"{/block:PermalinkPage}>
@@ -344,7 +412,7 @@
 		
 	{block:Posts}		
 		
-    <article class="post" data-id="">
+    <article class="post {block:Odd}odd{/block:Odd}{block:Even}even{/block:Even}" data-id="">
         
         <!-- ----------------------------------------------- -->
         <!-- !TEXT BLOCK- ---------------------------------- -->
@@ -382,19 +450,14 @@
 	        	{block:Photoset}
 	        		{block:Photos}
 	        			<div class="photosetPhotos">
-	        				<img src="{PhotoURL-400}" alt="{PhotoAlt}" />
+	        				<img src="{PhotoURL-500}" alt="{PhotoAlt}" />
 				        </div>
-				        
-				        
 	                {/block:Photos}
 	            {/block:Photoset}
             {/block:PermalinkPage} 
 
             {block:Caption}
             	<div class="caption">{Caption}</div>
-            	{block:IndexPage}
-            		<a href="{Permalink}" class="readmore">Permalink&nbsp;→</a>
-            	{/block:IndexPage}
             {/block:Caption}
         </div>	
         
@@ -426,9 +489,6 @@
 
         	{block:Caption}
         	<div class="caption">{Caption}</div>
-    		{block:IndexPage}
-        		<a href="{Permalink}" class="readmore">Permalink&nbsp;→</a>
-        	{/block:IndexPage}
         	{/block:Caption}
         </div>	
         
@@ -485,9 +545,6 @@
 
         	{block:Caption}
         	<div class="caption">{Caption}</div>
-        	{block:IndexPage}
-            		<a href="{Permalink}" class="readmore">Permalink&nbsp;→</a>
-            	{/block:IndexPage}
         	{/block:Caption}
         	
         </div>	
@@ -508,10 +565,7 @@
 	        
         	<!-- !CAPTION----------------------------------------- -->
 
-        	<div class="caption"><a href=""></a></div>	 
-        	{block:IndexPage}
-        		<a href="{Permalink}" class="readmore">Permalink&nbsp;→</a>
-        	{/block:IndexPage}       	        
+        	<div class="caption"><a href=""></a></div>	      
 	        
 	      </div>  
         
@@ -537,10 +591,6 @@
             <ul class="conversation">
                 <li class="line "></li>
             </ul>
-
-            {block:IndexPage}
-	    		<a href="{Permalink}" class="readmore">Permalink&nbsp;→</a>
-	    	{/block:IndexPage}
         </div>
 
 
@@ -595,22 +645,28 @@
 		        <div class="reblogButton">
 		        	{ReblogButton color="black"}
 		        </div>
-		        {block:NoteCount} 
-		        <div class="notes">
-		        	{NoteCountWithLabel}
-		        </div>
-		        {/block:NoteCount}
-		    </div>
+		        
 
-	        {block:PostNotes}
+		        {block:PostNotes}
 	        	<div class="notesContainer">
+	        		{block:NoteCount} 
+			        <div class="noteCount">
+			        	{NoteCountWithLabel}
+			        </div>
+			        {/block:NoteCount}
+
 		        	{PostNotes}
 		        </div>
-	        {/block:PostNotes}
+		        {/block:PostNotes}
+
+		        {block:IndexPage}
+		    		<div class="permalinkLink"><a href="{Permalink}">Permalink&nbsp;→</a></div>
+		    	{/block:IndexPage}
+		    </div>
 
 	        
 
-
+	            
 	        
 
         </div><!-- /.meta -->      
@@ -640,7 +696,7 @@
     <footer id="Footer">
 
     	<div class="quarter-column links">
-			<p id="Copyright">&copy; 2014 &mdash; The Energy Issue. A Columbia University GSAPP initiative launched in partnership with <span style="white-space;nowrap;">Oldcastle&nbsp;BuildingEnvelope&reg;.</span></p>
+			<p id="Copyright">&copy; {CopyrightYears} &mdash; The Energy Issue. A Columbia University GSAPP initiative launched in partnership with <span style="white-space;nowrap;">Oldcastle&nbsp;BuildingEnvelope&reg;.</span></p>
 		</div>
 		<div class="quarter-column">
 			<a href="http://www.arch.columbia.edu/" target="_blank"><img src="http://therrien-barley.com/CU_logo.png" /></a>
@@ -651,15 +707,30 @@
 		</div>
 		
 		<div class="quarter-column">
-			<ul id="Social">
-				<li class="ss-icon"><a href="https://twitter.com/theenergyissue">twitter</a></li>
-			</ul>
+			<div id="Social">
+	        	<div class='ss-icon'>
+	        		<a href="https://twitter.com/theenergyissue" target="_blank">twitter</a>
+	        	</div>
+	        	<div class="ss-icon">
+	        		<div class="fb-like" data-href="https://www.facebook.com/theenergyissue" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+	        	</div>
+	        </div>
 		</div>
                            
     </footer>
 
     <script type="text/javascript">
         $(document).ready(function(){ 
+
+        	//using Custom Select plugin http://adam.co/lab/jquery/customselect/
+        	//$('.functionSelect').customSelect();
+        	$('#menuSelect').change(function()
+			{
+				window.location.href = $(this).val();
+			});
+
+			$('#menuSelect').val( window.location.pathname.toLowerCase() );
+
 
         	$('#logoOn').click(function(){
         		$(this).hide();
