@@ -648,17 +648,18 @@
 		        </div>
 		        
 
-		        {block:PostNotes}
+		        
 	        	<div class="notesContainer">
 	        		{block:NoteCount} 
 			        <div class="noteCount">
 			        	{NoteCountWithLabel}
 			        </div>
 			        {/block:NoteCount}
-
-		        	{PostNotes}
+			        {block:PostNotes}
+		        		{PostNotes}
+		        	{/block:PostNotes}
 		        </div>
-		        {/block:PostNotes}
+		        
 
 		        {block:IndexPage}
 		    		<div class="permalinkLink"><a href="{Permalink}">Permalink&nbsp;→</a></div>
